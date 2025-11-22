@@ -47,15 +47,6 @@ public class GlassPaneDoorBlock extends DoorBlock {
                     0.0D, 0.0D, 1.0D - (T / 4.0D),
                     1.0D, 1.0D, 1.0D));
 
-    // Top and bottom bounding box when door open not used due to Steve height
-    // ,
-    // Shapes.box(
-    // 0.0D, 0.0D, 0.5D - (T / 2.0D),
-    // 1.0D, 0.0D + (T / 4.0D), 0.5D + (T / 2.0D)),
-    // Shapes.box(
-    // 0.0D, 1.0 - (T / 4.0D), 0.5D - (T / 2.0D),
-    // 1.0D, 1.0D, 0.5D + (T / 2.0D))
-
     public GlassPaneDoorBlock() {
         super(
                 BlockBehaviour.Properties
