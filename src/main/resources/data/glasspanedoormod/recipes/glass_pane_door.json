@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "group": "wooden_door",
+    "key": {
+        "W": {
+            "tag": "minecraft:planks"
+        },
+        "G": {
+            "item": "minecraft:glass"
+        }
+    },
+    "pattern": [
+        "WG",
+        "WG",
+        "WG"
+    ],
+    "result": {
+        "count": 3,
+        "item": "glasspanedoormod:glass_pane_door"
+    },
+    "show_notification": true
+}
