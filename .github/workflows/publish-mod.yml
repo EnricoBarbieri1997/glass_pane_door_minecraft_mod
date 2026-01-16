@@ -1,6 +1,7 @@
 name: publish-mod
 run-name: Publish Mod
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*.*.*"
