@@ -19,9 +19,6 @@ jobs:
           distribution: "zulu"
           java-version: 21
           cache: "gradle"
-          cache-dependency-path: |
-            sub-project/*.gradle*
-            sub-project/**/gradle-wrapper.properties
       - name: Build with Gradle
         run: ./gradlew build
       - uses: Kir-Antipov/mc-publish@v3.3
