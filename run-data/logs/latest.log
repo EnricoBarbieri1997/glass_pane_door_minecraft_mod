@@ -1,0 +1,151 @@
+[17gen2026 00:46:22.134] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 29, --assetsDir, C:\Users\enric\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, glasspanedoormod, --all, --output, C:\Users\enric\Desktop\minecraft_mod\src\generated\resources, --existing, C:\Users\enric\Desktop\minecraft_mod\src\main\resources]
+[17gen2026 00:46:22.136] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.9+10-LTS
+[17gen2026 00:46:22.136] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.9 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[17gen2026 00:46:22.196] [main/WARN] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Configuration file C:\Users\enric\Desktop\minecraft_mod\run-data\config\fml.toml is not correct. Correcting
+[17gen2026 00:46:22.196] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
+[17gen2026 00:46:22.196] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowLogHelpMessage] was corrected from null to true
+[17gen2026 00:46:22.197] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false
+[17gen2026 00:46:22.197] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowShowCPU] was corrected from null to false
+[17gen2026 00:46:22.205] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[17gen2026 00:46:22.276] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/enric/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[17gen2026 00:46:22.940] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[17gen2026 00:46:23.151] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\enric\.gradle\caches\forge_gradle\assets, --assetIndex, 29, --mod, glasspanedoormod, --all, --output, C:\Users\enric\Desktop\minecraft_mod\src\generated\resources, --existing, C:\Users\enric\Desktop\minecraft_mod\src\main\resources]
+[17gen2026 00:46:26.773] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 61.0.6, for MC 1.21.11 with MCP 20251209.095502
+[17gen2026 00:46:26.773] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v61.0.6 Initialized
+[17gen2026 00:46:26.779] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[17gen2026 00:46:26.819] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Caught exception during event RegisterEvent dispatch for modid glasspanedoormod
+java.lang.NullPointerException: Block id not set
+	at java.base/java.util.Objects.requireNonNull(Unknown Source) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.state.BlockBehaviour$Properties.effectiveDrops(BlockBehaviour.java:1160) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.state.BlockBehaviour.<init>(BlockBehaviour.java:107) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.Block.<init>(Block.java:238) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.DoorBlock.<init>(DoorBlock.java:65) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.block.GlassPaneDoorBlock.<init>(GlassPaneDoorBlock.java:52) ~[main/:?]
+	at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.GlassPaneDoorMod.lambda$static$0(GlassPaneDoorMod.java:48) ~[main/:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.lambda$handleEvent$0(DeferredRegister.java:383) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:61) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:383) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at java.base/java.util.function.Consumer.lambda$andThen$0(Unknown Source) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.internal.EventBusImpl.post(EventBusImpl.java:64) ~[eventbus-7.0-beta.12.jar!/:7.0-beta.12]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:181) ~[javafmllanguage-1.21.11-61.0.6.jar!/:61.0.6]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:423) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:410) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:348) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.common.ForgeStatesProvider.lambda$gather$0(ForgeStatesProvider.java:32) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:272) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:261) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:216) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.data.loading.DatagenModLoader.run(DatagenModLoader.java:93) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%231!/:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.data.Main.main(Main.java:88) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%230!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:96) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:79) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) ~[modlauncher-10.2.4.jar:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar:2.1.8]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+[17gen2026 00:46:26.835] [main/ERROR] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Caught exception during event RegisterEvent dispatch for modid glasspanedoormod
+java.lang.NullPointerException: Registry Object not present: glasspanedoormod:glass_pane_door
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegistryObject.get(RegistryObject.java:202) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.GlassPaneDoorMod.lambda$static$1(GlassPaneDoorMod.java:53) ~[main/:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.lambda$handleEvent$0(DeferredRegister.java:383) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:61) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:383) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at java.base/java.util.function.Consumer.lambda$andThen$0(Unknown Source) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.internal.EventBusImpl.post(EventBusImpl.java:64) ~[eventbus-7.0-beta.12.jar!/:7.0-beta.12]
+	at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:181) ~[javafmllanguage-1.21.11-61.0.6.jar!/:61.0.6]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:423) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:410) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:348) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.common.ForgeStatesProvider.lambda$gather$0(ForgeStatesProvider.java:32) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:272) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:261) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:216) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.data.loading.DatagenModLoader.run(DatagenModLoader.java:93) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%231!/:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.data.Main.main(Main.java:88) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%230!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:96) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:79) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) ~[modlauncher-10.2.4.jar:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar:2.1.8]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+[17gen2026 00:46:26.855] [main/FATAL] [net.minecraftforge.registries.GameData/]: Failed to register some entries, see suppressed exceptions for details
+java.lang.RuntimeException
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:336) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.common.ForgeStatesProvider.lambda$gather$0(ForgeStatesProvider.java:32) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.handleInlineTransition(ModLoader.java:272) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.dispatchAndHandleError(ModLoader.java:261) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.gatherAndInitializeMods(ModLoader.java:216) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+	at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.data.loading.DatagenModLoader.run(DatagenModLoader.java:93) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%231!/:?]
+	at TRANSFORMER/minecraft@1.21.11/net.minecraft.data.Main.main(Main.java:88) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar%230!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:96) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.11-61.0.6/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:79) ~[fmlloader-1.21.11-61.0.6.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) ~[modlauncher-10.2.4.jar:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) ~[modlauncher-10.2.4.jar:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar:2.1.8]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+	Suppressed: net.minecraftforge.fml.ModLoadingException: fml.modloading.errorduringevent
+		at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:185)
+		at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:423) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+		at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:410) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:348) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+		... 21 more
+	Caused by: java.lang.NullPointerException: Block id not set
+		at java.base/java.util.Objects.requireNonNull(Unknown Source)
+		at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.state.BlockBehaviour$Properties.effectiveDrops(BlockBehaviour.java:1160)
+		at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.state.BlockBehaviour.<init>(BlockBehaviour.java:107)
+		at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.Block.<init>(Block.java:238)
+		at TRANSFORMER/minecraft@1.21.11/net.minecraft.world.level.block.DoorBlock.<init>(DoorBlock.java:65)
+		at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.block.GlassPaneDoorBlock.<init>(GlassPaneDoorBlock.java:52)
+		at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.GlassPaneDoorMod.lambda$static$0(GlassPaneDoorMod.java:48)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.lambda$handleEvent$0(DeferredRegister.java:383)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:61)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:383)
+		at java.base/java.util.function.Consumer.lambda$andThen$0(Unknown Source)
+		at SECURE-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.internal.EventBusImpl.post(EventBusImpl.java:64)
+		at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:181)
+		... 24 more
+	Suppressed: net.minecraftforge.fml.ModLoadingException: fml.modloading.errorduringevent
+		at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:185)
+		at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:423) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+		at LAYER PLUGIN/net.minecraftforge.fmlcore@1.21.11-61.0.6/net.minecraftforge.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:410) ~[fmlcore-1.21.11-61.0.6.jar!/:1.0]
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.GameData.postRegisterEvents(GameData.java:348) ~[forge-1.21.11-61.0.6_mapped_official_1.21.11.jar:?]
+		... 21 more
+	Caused by: java.lang.NullPointerException: Registry Object not present: glasspanedoormod:glass_pane_door
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegistryObject.get(RegistryObject.java:202)
+		at TRANSFORMER/glasspanedoormod@1.0.1/com.enricobarbieri.glasspanedoormod.GlassPaneDoorMod.lambda$static$1(GlassPaneDoorMod.java:53)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.lambda$handleEvent$0(DeferredRegister.java:383)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.RegisterEvent.register(RegisterEvent.java:61)
+		at TRANSFORMER/net.minecraftforge.forge@61.0.6/net.minecraftforge.registries.DeferredRegister$EventDispatcher.handleEvent(DeferredRegister.java:383)
+		at java.base/java.util.function.Consumer.lambda$andThen$0(Unknown Source)
+		at SECURE-BOOTSTRAP/net.minecraftforge.eventbus/net.minecraftforge.eventbus.internal.EventBusImpl.post(EventBusImpl.java:64)
+		at LAYER PLUGIN/net.minecraftforge.javafmlmod@1.21.11-61.0.6/net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:181)
+		... 24 more
+[17gen2026 00:46:26.860] [main/FATAL] [net.minecraftforge.registries.GameData/]: Detected errors during registry event dispatch, rolling back to VANILLA state
+[17gen2026 00:46:27.424] [main/FATAL] [net.minecraftforge.registries.GameData/]: Detected errors during registry event dispatch, roll back to VANILLA complete

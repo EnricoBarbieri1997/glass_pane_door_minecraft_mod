@@ -2,32 +2,18 @@ package com.enricobarbieri.glasspanedoormod;
 
 import com.enricobarbieri.glasspanedoormod.block.GlassPaneDoorBlock;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.level.block.SoundType;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -46,27 +32,26 @@ public class GlassPaneDoorMod {
 
     // Creates a new Block with the id "glasspanedoormod:GLASS_PANE_DOOR"
     public static final RegistryObject<Block> GLASS_PANE_DOOR = BLOCKS.register("glass_pane_door",
-            () -> new GlassPaneDoorBlock());
+            () -> new GlassPaneDoorBlock(BLOCKS.key("glass_pane_door")));
     // Creates a new BlockItem with the id "glasspanedoormod:glass_pane_door",
     // combining the
     // namespace and path
     public static final RegistryObject<Item> GLASS_PANE_DOOR_ITEM = ITEMS.register("glass_pane_door",
-            () -> new BlockItem(GLASS_PANE_DOOR.get(), new Item.Properties()));
+            () -> new BlockItem(GLASS_PANE_DOOR.get(), new Item.Properties().setId(ITEMS.key("glass_pane_door"))));
 
     public GlassPaneDoorMod(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+        var modBusGroup = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
+        BLOCKS.register(modBusGroup);
         // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
+        ITEMS.register(modBusGroup);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(GlassPaneDoorMod::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the
         // config file for us
@@ -81,7 +66,7 @@ public class GlassPaneDoorMod {
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    private static void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(GLASS_PANE_DOOR_ITEM);
     }

@@ -2,7 +2,9 @@ package com.enricobarbieri.glasspanedoormod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -10,13 +12,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 
 public class GlassPaneDoorBlock extends DoorBlock {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     // Thickness: 2 pixels (2/16 = 0.125)
@@ -47,16 +49,16 @@ public class GlassPaneDoorBlock extends DoorBlock {
                     0.0D, 0.0D, 1.0D - (T / 4.0D),
                     1.0D, 1.0D, 1.0D));
 
-    public GlassPaneDoorBlock() {
+    public GlassPaneDoorBlock(ResourceKey<Block> id) {
         super(
+                BlockSetType.OAK,
                 BlockBehaviour.Properties
-                        .of() // pick a material if you want (e.g. .of(Material.GLASS) in older mappings)
+                        .of()
+                        .setId(id)
                         .strength(0.3F)
                         .noOcclusion() // non-occluding, like glass
                         .sound(SoundType.GLASS)
-                        .isViewBlocking((s, l, p) -> false),
-                BlockSetType.OAK // sound/behavior preset; pick what you like
-        );
+                        .isViewBlocking((s, l, p) -> false));
     }
 
     private boolean isAxisZ(BlockState state) {

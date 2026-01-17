@@ -1,18 +1,13 @@
 package com.enricobarbieri.glasspanedoormod;
 
-import com.enricobarbieri.glasspanedoormod.GlassPaneDoorMod;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,26 +29,14 @@ public class Config {
 
         private static boolean validateItemName(final Object obj) {
                 return obj instanceof final String itemName
-                                && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
+                                && ForgeRegistries.ITEMS.containsKey(Identifier.tryParse(itemName));
         }
 
         @SubscribeEvent
         static void onLoad(final ModConfigEvent event) {
                 // convert the list of strings into a set of items
                 items = ITEM_STRINGS.get().stream()
-                                .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
+                                .map(itemName -> ForgeRegistries.ITEMS.getValue(Identifier.tryParse(itemName)))
                                 .collect(Collectors.toSet());
         }
-
-        // @SubscribeEvent
-        // public static void onClientSetup(FMLClientSetupEvent event) {
-        // event.enqueueWork(() -> {
-        // // Try translucent first; if you see weird order issues, use cutout instead.
-        // ItemBlockRenderTypes.setRenderLayer(
-        // GlassPaneDoorMod.GLASS_PANE_DOOR.get(),
-        // RenderType.translucent()
-        // // or RenderType.cutout()
-        // );
-        // });
-        // }
 }
