@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "glasspanedoormod:item/purple_glass_pane_door"
+    }
+}
