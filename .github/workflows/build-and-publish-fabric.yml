@@ -1,0 +1,13 @@
+name: build-and-publish-fabric
+run-name: Build and Publish Fabric
+on:
+    workflow_dispatch:
+    push:
+        tags:
+            - "v*.*.*"
+jobs:
+    build-and-publish:
+        uses: ./.github/workflows/build-and-publish-mod.yml
+        with:
+            project-subpath: "fabric"
+        secrets: inherit

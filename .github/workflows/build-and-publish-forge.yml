@@ -1,0 +1,13 @@
+name: build-and-publish-forge
+run-name: Build and Publish Forge
+on:
+    workflow_dispatch:
+    push:
+        tags:
+            - "v*.*.*"
+jobs:
+    build-and-publish:
+        uses: ./.github/workflows/build-and-publish-mod.yml
+        with:
+            project-subpath: "forge"
+        secrets: inherit
