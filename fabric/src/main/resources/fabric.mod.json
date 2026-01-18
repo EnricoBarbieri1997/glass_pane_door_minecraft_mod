@@ -3,7 +3,7 @@
 	"id": "glasspanedoormod",
 	"version": "${version}",
 	"name": "GlassPaneDoorMod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds a glass pane door that fits glass panes by sitting in the middle of the block and connecting to them.",
 	"authors": [
 		"Me!"
 	],
