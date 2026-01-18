@@ -1,0 +1,6 @@
+{
+    "model": {
+        "type": "minecraft:model",
+        "model": "glasspanedoormod:item/white_glass_pane_door"
+    }
+}

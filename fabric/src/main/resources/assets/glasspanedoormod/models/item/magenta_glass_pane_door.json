@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "glasspanedoormod:item/black_glass_pane_door"
+        "layer0": "glasspanedoormod:item/magenta_glass_pane_door"
     }
 }

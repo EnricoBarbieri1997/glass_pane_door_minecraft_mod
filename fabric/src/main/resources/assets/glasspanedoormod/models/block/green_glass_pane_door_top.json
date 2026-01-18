@@ -1,0 +1,8 @@
+{
+    "parent": "glasspanedoormod:block/glass_pane_door_top",
+    "textures": {
+        "0": "glasspanedoormod:block/glass_pane_door_frame",
+        "1": "minecraft:block/green_stained_glass",
+        "particle": "glasspanedoormod:block/glass_pane_door_frame"
+    }
+}

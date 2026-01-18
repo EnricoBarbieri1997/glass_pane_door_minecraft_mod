@@ -1,0 +1,6 @@
+{
+    "parent": "glasspanedoormod:block/glass_pane_door_bottom",
+    "textures": {
+        "1": "minecraft:block/light_blue_stained_glass"
+    }
+}
