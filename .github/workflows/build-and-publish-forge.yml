@@ -7,6 +7,8 @@ on:
             - "v*.*.*"
 jobs:
     build-and-publish:
+        permissions:
+            contents: write
         uses: ./.github/workflows/build-and-publish-mod.yml
         with:
             project-subpath: "forge"
