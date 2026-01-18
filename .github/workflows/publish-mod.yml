@@ -20,10 +20,12 @@ jobs:
           java-version: 21
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
+        working-directory: forge
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
       - name: Build with Gradle
         run: ./gradlew build
+        working-directory: forge
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: ${{ vars.MODRINTH_ID }}
