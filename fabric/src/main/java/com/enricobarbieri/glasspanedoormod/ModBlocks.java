@@ -18,16 +18,8 @@ import java.util.function.Function;
 import com.enricobarbieri.glasspanedoormod.block.GlassPaneDoorBlock;
 
 public class ModBlocks {
-    public static final Block GLASS_PANE_DOOR = register(
-            "glass_pane_door",
-            GlassPaneDoorBlock::new,
-            BlockBehaviour.Properties
-                    .of()
-                    .strength(0.3F)
-                    .noOcclusion() // non-occluding, like glass
-                    .sound(SoundType.GLASS)
-                    .isViewBlocking((s, l, p) -> false),
-            true);
+    public static final Block GLASS_PANE_DOOR = registerGlassPaneDoorBlock("glass_pane_door");;
+    public static final Block BLACK_GLASS_PANE_DOOR = registerGlassPaneDoorBlock("black_glass_pane_door");;
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory,
             BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
@@ -59,5 +51,21 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
             itemGroup.accept(ModBlocks.GLASS_PANE_DOOR.asItem());
         });
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.accept(ModBlocks.BLACK_GLASS_PANE_DOOR.asItem());
+        });
+    }
+
+    public static Block registerGlassPaneDoorBlock(String name) {
+        return register(
+                name,
+                GlassPaneDoorBlock::new,
+                BlockBehaviour.Properties
+                        .of()
+                        .strength(0.3F)
+                        .noOcclusion() // non-occluding, like glass
+                        .sound(SoundType.GLASS)
+                        .isViewBlocking((s, l, p) -> false),
+                true);
     }
 }

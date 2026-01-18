@@ -8,5 +8,6 @@ public class GlassPaneDoorModClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		BlockRenderLayerMap.putBlock(ModBlocks.GLASS_PANE_DOOR, ChunkSectionLayer.TRANSLUCENT);
+		BlockRenderLayerMap.putBlock(ModBlocks.BLACK_GLASS_PANE_DOOR, ChunkSectionLayer.TRANSLUCENT);
 	}
 }

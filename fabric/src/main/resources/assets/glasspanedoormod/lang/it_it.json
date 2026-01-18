@@ -1,4 +1,6 @@
 {
     "block.glasspanedoormod.glass_pane_door": "Porta a Pannello di Vetro",
-    "item.glasspanedoormod.glass_pane_door": "Porta a Pannello di Vetro"
+    "item.glasspanedoormod.glass_pane_door": "Porta a Pannello di Vetro",
+    "block.glasspanedoormod.black_glass_pane_door": "Porta a Pannello di Vetro Nero",
+    "item.glasspanedoormod.black_glass_pane_door": "Porta a Pannello di Vetro Nero"
 }

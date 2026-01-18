@@ -1,4 +1,6 @@
 {
     "block.glasspanedoormod.glass_pane_door": "Glass Pane Door",
-    "item.glasspanedoormod.glass_pane_door": "Glass Pane Door"
+    "item.glasspanedoormod.glass_pane_door": "Glass Pane Door",
+    "block.glasspanedoormod.black_glass_pane_door": "Black Glass Pane Door",
+    "item.glasspanedoormod.black_glass_pane_door": "Black Glass Pane Door"
 }
