@@ -3,8 +3,12 @@
     "category": "redstone",
     "group": "wooden_door",
     "key": {
-        "W": "#minecraft:planks",
-        "G": "minecraft:cyan_stained_glass"
+        "W": {
+            "tag": "minecraft:planks"
+        },
+        "G": {
+            "item": "light_gray_stained_glass"
+        }
     },
     "pattern": [
         "WG",
@@ -13,7 +17,7 @@
     ],
     "result": {
         "count": 3,
-        "id": "glasspanedoormod:cyan_glass_pane_door"
+        "item": "glasspanedoormod:light_gray_glass_pane_door"
     },
     "show_notification": true
 }
