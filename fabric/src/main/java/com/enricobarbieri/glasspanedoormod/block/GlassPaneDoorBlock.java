@@ -90,4 +90,9 @@ public class GlassPaneDoorBlock extends DoorBlock {
     public VoxelShape getOutlineShape(BlockState state, BlockView level, BlockPos pos, ShapeContext ctx) {
         return getShapeClosed(state, level, pos, ctx);
     }
+
+    @Override
+    public VoxelShape getSidesShape(BlockState state, BlockView world, BlockPos pos) {
+        return VoxelShapes.fullCube();
+    }
 }
