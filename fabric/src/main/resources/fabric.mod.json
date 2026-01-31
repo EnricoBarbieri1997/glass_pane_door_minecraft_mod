@@ -5,11 +5,11 @@
 	"name": "GlassPaneDoorMod",
 	"description": "Adds a glass pane door that fits glass panes by sitting in the middle of the block and connecting to them.",
 	"authors": [
-		"Me!"
+		"Enrico Barbieri"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/EnricoBarbieri1997/glass_pane_door_minecraft_mod",
+		"sources": "https://github.com/EnricoBarbieri1997/glass_pane_door_minecraft_mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/glasspanedoormod/icon.png",
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": "~1.21.11",
+		"minecraft": "~1.20.1",
 		"java": ">=21",
 		"fabric-api": "*"
 	}

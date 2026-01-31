@@ -1,17 +1,16 @@
 package com.enricobarbieri.glasspanedoormod;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
@@ -36,83 +35,72 @@ public class ModBlocks {
     public static final Block MAGENTA_GLASS_PANE_DOOR = registerGlassPaneDoorBlock("magenta_glass_pane_door");
     public static final Block PINK_GLASS_PANE_DOOR = registerGlassPaneDoorBlock("pink_glass_pane_door");
 
-    private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory,
-            BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
-        // Create a registry key for the block
-        ResourceKey<Block> blockKey = keyOfBlock(name);
+    private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory,
+            AbstractBlock.Settings settings, boolean shouldRegisterItem) {
+        Identifier id = new Identifier(GlassPaneDoorMod.MOD_ID, name);
         // Create the block instance
-        Block block = blockFactory.apply(settings.setId(blockKey));
+        Block block = blockFactory.apply(settings);
 
         if (shouldRegisterItem) {
-            ResourceKey<Item> itemKey = keyOfItem(name);
-
             BlockItem blockItem = new BlockItem(block,
-                    new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
-            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+                    new Item.Settings());
+            Registry.register(Registries.ITEM, id, blockItem);
         }
 
-        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
-    }
-
-    private static ResourceKey<Block> keyOfBlock(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(GlassPaneDoorMod.MOD_ID, name));
-    }
-
-    private static ResourceKey<Item> keyOfItem(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GlassPaneDoorMod.MOD_ID, name));
+        return Registry.register(Registries.BLOCK, id, block);
     }
 
     public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.BLACK_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.BLACK_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.RED_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.RED_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.WHITE_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.WHITE_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.LIGHT_GRAY_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.LIGHT_GRAY_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.GRAY_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.GRAY_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.BROWN_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.BROWN_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.ORANGE_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.ORANGE_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.YELLOW_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.YELLOW_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.LIME_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.LIME_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.GREEN_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.GREEN_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.CYAN_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.CYAN_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.LIGHT_BLUE_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.LIGHT_BLUE_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.BLUE_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.BLUE_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.PURPLE_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.PURPLE_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.MAGENTA_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.MAGENTA_GLASS_PANE_DOOR.asItem());
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(ModBlocks.PINK_GLASS_PANE_DOOR.asItem());
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
+            itemGroup.add(ModBlocks.PINK_GLASS_PANE_DOOR.asItem());
         });
     }
 
@@ -120,12 +108,10 @@ public class ModBlocks {
         return register(
                 name,
                 GlassPaneDoorBlock::new,
-                BlockBehaviour.Properties
-                        .of()
+                AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
                         .strength(0.3F)
-                        .noOcclusion() // non-occluding, like glass
-                        .sound(SoundType.GLASS)
-                        .isViewBlocking((s, l, p) -> false),
+                        .nonOpaque() // non-occluding, like glass
+                        .sounds(BlockSoundGroup.GLASS),
                 true);
     }
 }
