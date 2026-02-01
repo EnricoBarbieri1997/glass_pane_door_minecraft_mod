@@ -22,13 +22,6 @@
 			"com.enricobarbieri.glasspanedoormod.GlassPaneDoorModClient"
 		]
 	},
-	"mixins": [
-		"glasspanedoormod.mixins.json",
-		{
-			"config": "glasspanedoormod.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~1.20.1",
